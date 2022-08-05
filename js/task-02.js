@@ -9,30 +9,16 @@ const ingredients = [
   "Condiments",
 ];
 
-const makeElementsLi = document.createElement(`li`);
-makeElementsLi.classList.add(`.item`);
+const ingredientsUl = document.querySelector(`ul`);
 
-makeElementsLi.append(...elements);
+const foodIngredients = ingredients.map((ingredient) => {
+  const makeElementsLi = document.createElement(`li`);
+  makeElementsLi.classList.add("item");
+  makeElementsLi.textContent = ingredients;
 
-document.ul.appendChild(makeElementsLi);
-console.log(document.ul);
-console.log(makeElementsLi);
+  return makeElementsLi;
+});
 
-// const makeElementsLi = ingredients;
+ingredientsUl.append(...foodIngredients);
 
-// const elements = ingredients.map((option) => {
-//   ingredients.classList.add(`.item`);
-//   makeElementsLi.append(...elements);
-
-//   return elements;
-// });
-// console.log(makeElementsLi);
-
-// makeElementsLi.classList.add(ingredients);
-// makeElementsLi.textContent = `
-// "Potatoes",
-//   "Mushrooms",
-//   "Garlic",
-//   "Tomatos",
-//   "Herbs",
-//   "Condiments",`;
+console.log(ingredientsUl);
