@@ -12,23 +12,19 @@
 
 "use strict";
 
-const refs = {
-  input: document.querySelector('input[data-length="6"]'),
-  inpitGeneral: document.querySelector("input"),
-  style: document.querySelector("style"),
-};
+const input = document.querySelector("#validation-input");
 
-refs.inputVel.addEventListener("blur", oninput);
+input.addEventListener("blur", oninput);
 
-const oninput = function (event) {
-  if (input.value.length === inpitGeneral) {
-    inputVel.classList.add("valid");
-    return "valid";
+function oninput() {
+  if (Number(input.value.length) === Number(input.dataset.length)) {
+    input.classList.remove("invalid");
+    input.classList.add("valid");
   } else {
-    return "invalid";
+    input.classList.remove("valid");
+    input.classList.add("invalid");
   }
-};
+}
 
-// removeFocusBtn.addEventListener("click", () => {
-//   textInput.blur();
-// });
+console.log(input);
+console.log(oninput);
