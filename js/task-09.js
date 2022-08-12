@@ -16,9 +16,10 @@ body.addEventListener("click", getRandomHexColorBody);
 getRandomHexColorBody();
 
 function getRandomHexColorBody() {
-  document.body.style.backgroundColor = "#" + randomColor;
-  color.innerHTML = "#" + randomColor;
-}
+  return (
+    (document.body.style.backgroundColor = "#" + randomColor),
+  color.innerHTML = "#" + randomColor),
+};
 
 console.log(changeColor);
 console.log(body);
